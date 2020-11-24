@@ -184,11 +184,11 @@ public class StdDelegatingDeserializer<T>
          *   would be to try to change `TypeDeserializer` to accept `Converter` to
          *   invoke... but that is more intrusive, yet not guaranteeing success.
          */
-        // method called up to 2.7.3:
-//        Object delegateValue = _delegateDeserializer.deserializeWithType(p, ctxt, typeDeserializer);
+        // method called up to 2.7.3 and since 1stdibs-2.11.3:
+        Object delegateValue = _delegateDeserializer.deserializeWithType(p, ctxt, typeDeserializer);
 
-        // method called since 2.7.4
-        Object delegateValue = _delegateDeserializer.deserialize(p, ctxt);
+        // method called since 2.7.4 and until 1stdibs-2.11.3
+//        Object delegateValue = _delegateDeserializer.deserialize(p, ctxt);
         if (delegateValue == null) {
             return null;
         }
