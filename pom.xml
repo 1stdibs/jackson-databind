@@ -7,7 +7,7 @@
     <version>2.11.4-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.fasterxml.jackson.core</groupId>
+  <groupId>com.dibs</groupId>
   <artifactId>jackson-databind</artifactId>
   <version>2.11.4-SNAPSHOT</version>
   <name>jackson-databind</name>
@@ -105,15 +105,18 @@
 
   <!-- Alas, need to include snapshot reference since otherwise can not find
        snapshot of parent... -->
-  <repositories>
+  <distributionManagement>
     <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases><enabled>false</enabled></releases>
-      <snapshots><enabled>true</enabled></snapshots>
+      <id>1stdibs-release</id>
+      <name>Nexus release artifact deployment repository</name>
+      <url>http://dibsnexus/nexus/content/repositories/releases</url>
     </repository>
-  </repositories>
+    <snapshotRepository>
+      <id>1stdibs-snapshot</id>
+      <name>Nexus snapshot artifact deployment repository</name>
+      <url>http://dibsnexus/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
      <plugins>
